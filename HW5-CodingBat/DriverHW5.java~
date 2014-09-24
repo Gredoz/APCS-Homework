@@ -1,0 +1,7 @@
+public class DriverHW5 {
+    public static void main(String[] args){
+	StringStuff HW = new StringString();
+	System.out.println("Should be ABBA: " + HW.makeAbba("A","B"));
+	System.out.println("Should be Snakes: " + HW.nonStart("SSnakes"));
+	System.out.println("Should be 11: " + HW.diff21(10));
+	System.out.println("Should be 18: " + HW.diff21(30));
