@@ -1,0 +1,17 @@
+public class Triangles {
+    public String tri1(int x){
+	int indexX = 1;
+	int indexY = 1;
+	String ans = "";
+	while (indexY <= x){
+	    while (indexX > 0){
+		ans = ans + "*";
+		indexX = indexX - 1;
+	    }
+	    ans = ans + "\n";
+	    indexY = indexY + 1;
+	    indexX = indexY;
+	}
+	return ans;
+    }
+}
