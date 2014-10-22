@@ -1,0 +1,9 @@
+public class driver{
+    public static void main(String[] args){
+	answers HW = new answers();
+	System.out.println("Should be ChoCho: " + HW.frontTimes("Chocolate", 2));
+	System.out.println("Should be Greg: " + HW.stringBits("Gxrxexg"));
+	System.out.println("Should be Yuck: " + HW.stringYak("yakYuck"));
+	System.out.println("Should be 2: " + HW.stringMatch("abcd", "abc"));
+    }
+}
