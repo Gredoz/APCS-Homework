@@ -1,0 +1,5 @@
+public class Warrior extends character{
+    public void warriorSetHealth(int i){
+	health = i;
+    }
+}
