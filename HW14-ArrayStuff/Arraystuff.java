@@ -54,6 +54,117 @@ public class Arraystuff {
 	return ans;
     }
 
+
+
+    public int sum67(int[] nums) {
+	int ans = 0;
+	boolean count = true;
+	for(int i=0; i<nums.length; i++){
+	    if (nums[i] == 6){
+		count = false;
+	    }
+	    if (count) {
+		ans = ans + nums[i];
+	    }
+	    if (nums[i] == 7){
+		count = true;
+	    }
+	}
+	return ans;
+    }
+
+
+    public boolean more14(int[] nums) {
+	int ones = 0;
+	int fours = 0;
+	for (int i=0; i<nums.length; i++){
+	    if (nums[i] == 1){
+		ones = ones + 1;
+	    }
+	    if (nums[i] == 4){
+		fours = fours + 1;
+	    }
+	}
+	if (ones > fours){
+	    return true;
+	}
+	return false;
+    }
+
+
+    public int[] tenRun(int[] nums) {
+	int[] ans;
+	ans = new int[nums.length];
+	boolean mult = false;
+	int multi = 0;
+	for (int i=0; i<nums.length; i++){
+	    if (mult ==false){
+		ans[i] = nums[i];
+	    }
+	    if (nums[i]%10 == 0){
+		mult = true;
+		multi = nums[i];
+	    }
+	    if (mult){
+		ans[i] = multi;
+	    }
+	}
+	return ans;
+    }
+
+
+    public boolean tripleUp(int[] nums) {
+	int count = 0;
+	for (int i=0; i<(nums.length-1); i++){
+	    if ((nums[i] + 1) == nums[i+1]){
+		count = count + 1;
+	    }
+	    if ((nums[i] + 1) != nums[i+1]){
+		count = 0;
+	    }
+	    if (count == 2){
+		return true;
+	    }
+    
+	}
+	return false;
+    }
+
+
+    public boolean canBalance(int[] nums) {
+	int left = 0;
+   
+	for (int i = 0; i < nums.length; i++) {
+	    left += nums[i];
+	    int right = 0;
+	    for (int j = nums.length-1; j > i; j--) {
+		right += nums[j];
+	    }
+	    if (right == left)
+		return true;
+	}
+	return false;
+    }
+
+
+
+    public int[] seriesUp(int n) {
+	int[] ans = new int[n * (n + 1) / 2];
+	int pos = 0;
+	for (int i=1; i <= n + 1; i++) {
+	    for (int j = 1; j < i; j++) ans[pos++] = j;
+
+	}
+	return ans;
+    }
+
+
+
+
+
+
+
+    //--------------DRIVER SECTION-------------------
     public static void main(String[] args) {
 	Arraystuff as = new Arraystuff();
 	System.out.println(as);

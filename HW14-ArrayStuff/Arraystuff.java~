@@ -1,20 +1,156 @@
-  
+import java.util.*;
 
-Welcome to GNU Emacs, one component of the GNU operating system.
+public class Arraystuff {
+    /*-------------------- Instance Variables --------------------*/
 
-Emacs Tutorial	Learn basic keystroke commands
-Emacs Guided Tour	Overview of Emacs features at gnu.org
-View Emacs Manual	View the Emacs manual using Info
-Absence of Warranty	GNU Emacs comes with ABSOLUTELY NO WARRANTY
-Copying Conditions	Conditions for redistributing and changing Emacs
-Ordering Manuals	Purchasing printed copies of manuals
+    private int[] a;
+    private Random rnd;
+    /* by making a variable final we can't change
+       the value after the initial asssignment 
+    */
+    public final int final_example = 123;
 
-To start...     Open a File     Open Home Directory     Customize Startup
-To quit a partially entered command, type Control-g.
+    /*-------------------- Constructors --------------------*/
+    
+    public Arraystuff(int n){
+	rnd = new Random();
+	a = new int[n];
+	for (int i=0;i<a.length;i++){
+	    a[i] = 75+rnd.nextInt(76);
+	}
+    }
+    
+    public Arraystuff() {
+	this(100);
+    }
 
-This is GNU Emacs 23.2.50.1 (i386-mingw-nt6.1.7601)
- of 2010-05-11 on SHAN-PC
-Copyright (C) 2010 Free Software Foundation, Inc.
+    /*-------------------- Methods --------------------*/
+    public String toString(){
+	String s="";
+	for (int i=0;i<a.length;i++){
+	    s=s+a[i]+", ";
+	}
+	return s;
+    }
 
-If an Emacs session crashed recently, type Meta-x recover-session RET
-to recover the files you were editing.
+    public int find(int n){
+	int ans = -1;
+	for (int i=0; i<a.length; i++){
+	    if (a[i] == n){
+		ans = i;
+		break;
+	    }
+	}
+	return ans;
+    }
+
+    public int maxVal(){
+	int ans = 0;
+	for (int i=0; i<a.length; i++){
+	    if (a[i] > ans){
+		ans = a[i];
+	    }
+	}
+	return ans;
+    }
+
+
+
+    public int sum67(int[] nums) {
+	int ans = 0;
+	boolean count = true;
+	for(int i=0; i<nums.length; i++){
+	    if (nums[i] == 6){
+		count = false;
+	    }
+	    if (count) {
+		ans = ans + nums[i];
+	    }
+	    if (nums[i] == 7){
+		count = true;
+	    }
+	}
+	return ans;
+    }
+
+
+    public boolean more14(int[] nums) {
+	int ones = 0;
+	int fours = 0;
+	for (int i=0; i<nums.length; i++){
+	    if (nums[i] == 1){
+		ones = ones + 1;
+	    }
+	    if (nums[i] == 4){
+		fours = fours + 1;
+	    }
+	}
+	if (ones > fours){
+	    return true;
+	}
+	return false;
+    }
+
+
+    public int[] tenRun(int[] nums) {
+	int[] ans;
+	ans = new int[nums.length];
+	boolean mult = false;
+	int multi = 0;
+	for (int i=0; i<nums.length; i++){
+	    if (mult ==false){
+		ans[i] = nums[i];
+	    }
+	    if (nums[i]%10 == 0){
+		mult = true;
+		multi = nums[i];
+	    }
+	    if (mult){
+		ans[i] = multi;
+	    }
+	}
+	return ans;
+    }
+
+
+    public boolean tripleUp(int[] nums) {
+	int count = 0;
+	for (int i=0; i<(nums.length-1); i++){
+	    if ((nums[i] + 1) == nums[i+1]){
+		count = count + 1;
+	    }
+	    if ((nums[i] + 1) != nums[i+1]){
+		count = 0;
+	    }
+	    if (count == 2){
+		return true;
+	    }
+    
+	}
+	return false;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //--------------DRIVER SECTION-------------------
+    public static void main(String[] args) {
+	Arraystuff as = new Arraystuff();
+	System.out.println(as);
+
+	System.out.println(as.find(100));
+	System.out.println(as.maxVal());
+	
+	
+    }
+}
