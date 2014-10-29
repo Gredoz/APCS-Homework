@@ -25,6 +25,18 @@ public class Arraystuff {
     }
 
     /*-------------------- Methods --------------------*/
+
+    public int freq(int n){
+	int ans=0;
+	for (int i=0; i<a.length; i++){
+	    if (a[i] == n){
+		ans = ans + 1;
+	    }
+	}
+	return ans;
+    }
+
+
     public String toString(){
 	String s="";
 	for (int i=0;i<a.length;i++){
