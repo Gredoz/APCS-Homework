@@ -172,6 +172,48 @@ public class Arraystuff {
 
 
 
+    //HOMEWORK FOR FRIDAY(10/31/14)
+
+    public int maxMirror(int[] nums) {
+
+        int ans = 0;
+        int mirrorNow = 0;
+        int front = 0;
+        int back = nums.length-1;
+        int testNow = 0;
+ 
+        while(front < nums.length) {
+            mirrorNow = 0;
+ 
+            while(back >= 0 && front < nums.length) {
+                if(nums[front] == nums[back]) {
+                    mirrorNow++;
+                    front++;
+                } else {
+                    front = testNow;
+                    mirrorNow = 0;
+                }
+                
+                if(mirrorNow > ans) {
+                    ans = mirrorNow;
+                }
+                
+                back--;
+            }
+            
+            if(back == -1) {
+		front = testNow;
+	    }
+ 
+            front++;
+            testNow++;
+            back = nums.length-1;
+        }
+ 
+        return ans;
+    }
+
+
 
 
 
