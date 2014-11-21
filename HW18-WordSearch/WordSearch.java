@@ -30,6 +30,9 @@ public class WordSearch{
 	return s;
     }
 
+
+    //*******HORIZONTAL***********
+
     public void addWordHF(String w,int row, int col){
 	int r = row, c = col;
 	boolean write = true;
@@ -91,6 +94,54 @@ public class WordSearch{
 
 
 
+
+    //********VERTICAL***********
+
+    public void addWordVD(String w,int row, int col){
+	int r = row, c = col;
+	boolean write = true;
+
+	for(int i=0;i<w.length();i++){
+	    if (c >= 29){
+		write = false;
+		break;
+	    }
+	    if (r >= 19){
+		write = false;
+		break;
+	    }
+	    if (!(board[r][c] == w.charAt(i) || board[r][c] == '.')){
+		write = false;
+	    }
+	    r++;
+	}
+	r = row;
+	if (write){
+	    for (int i=0;i<w.length();i++){
+		board[r][c] = w.charAt(i);
+	       r++;
+	    }
+	}
+	
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     public static void main(String[] args) {
 	WordSearch w = new WordSearch();
 	System.out.println(w);
@@ -101,7 +152,9 @@ public class WordSearch{
 	w.addWordHF("hello",100,5);
 	w.addWordHF("hello",30,555);
 	w.addWordHB("GREG",0, 0);
-				
+		
+	
+		
 	System.out.println(w);
     }
 }

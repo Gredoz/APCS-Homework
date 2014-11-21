@@ -1,0 +1,6 @@
+public class WordSearch {
+    
+    private char[][] board;
+    
+    public WordSearch(int r, int c){
+	
