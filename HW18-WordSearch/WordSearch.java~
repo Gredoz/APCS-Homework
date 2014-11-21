@@ -30,24 +30,77 @@ public class WordSearch{
 	return s;
     }
 
-    public void addWordH(String w,int row, int col){
+    public void addWordHF(String w,int row, int col){
 	int r = row, c = col;
+	boolean write = true;
 
-	for (int i=0;i<w.length();i++){
-	    board[r][c] = w.charAt(i);
+	for(int i=0;i<w.length();i++){
+	    if (c >= 29){
+		write = false;
+		break;
+	    }
+	    if (r >= 19){
+		write = false;
+		break;
+	    }
+	    if (!(board[r][c] == w.charAt(i) || board[r][c] == '.')){
+		write = false;
+	    }
 	    c++;
 	}
-
+	c = col;
+	if (write){
+	    for (int i=0;i<w.length();i++){
+		board[r][c] = w.charAt(i);
+		c++;
+	    }
+	}
+	
     }
+
+    public void addWordHB(String w,int row, int col){
+	String newWord = new StringBuffer(w).reverse().toString();
+	w = newWord;
+
+	int r = row, c = col;
+	boolean write = true;
+
+	for(int i=0;i<w.length();i++){
+	    if (c >= 29){
+		write = false;
+		break;
+	    }
+	    if (r >= 19){
+		write = false;
+		break;
+	    }
+	    if (!(board[r][c] == w.charAt(i) || board[r][c] == '.')){
+		write = false;
+	    }
+	    c++;
+	}
+	c = col;
+	if (write){
+	    for (int i=0;i<w.length();i++){
+		board[r][c] = w.charAt(i);
+		c++;
+	    }
+	}
+	
+    }
+
+
 
     public static void main(String[] args) {
 	WordSearch w = new WordSearch();
 	System.out.println(w);
-	w.addWordH("hello",3,5);
-	w.addWordH("look",3,8);
-	w.addWordH("look",3,5);
-	w.addWordH("hello",100,5);
-	w.addWordH("hello",30,555);
+	w.addWordHF("hello",3,5);
+	w.addWordHF("look",3,8);
+	w.addWordHF("look",3,5);
+	w.addWordHF("biggish", 3, 27);
+	w.addWordHF("hello",100,5);
+	w.addWordHF("hello",30,555);
+	w.addWordHB("GREG",0, 0);
 				
 	System.out.println(w);
     }
