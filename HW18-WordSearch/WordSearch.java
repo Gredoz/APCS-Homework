@@ -152,8 +152,49 @@ public class WordSearch{
 	
     }
 
+    //*********HORIZONTAL**********
+ 
+
+public void addWordNE(String w, int row, int col) {
+    int r = row, c = col;
+    boolean write = true;
 
 
+    for (int i = 0; i < w.length(); i++) {
+	if (c >= 45){
+	    write = false;
+	    break;
+	}
+	if (r < 0 || r >= 21) {
+	    write = false;
+	    break;
+	}
+	if (!(board[r][c] == w.charAt(i) || board[r][c] == '.')){
+	    write = false;
+	}
+
+	r--;
+	c++;
+    }
+	
+    r = row;
+    c = col;
+    if (write) {
+	for (int i = 0; i < w.length(); i++) {
+	    board[r][c] = w.charAt(i);
+	    r--;
+	    c++;
+	}
+    }
+}
+
+    public void addWordSW(String w, int row, int col) {
+	String newWord = new StringBuffer(w).reverse().toString();
+	w = newWord;
+	addWordNE(w, row, col);
+    }
+
+    //*******DRIVERS**********
 
     public static void main(String[] args) {
 	WordSearch w = new WordSearch();
