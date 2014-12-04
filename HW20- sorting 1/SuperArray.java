@@ -100,8 +100,8 @@ public class SuperArray {
 	System.out.println(s.add(3));
 	System.out.println(s.add(1));
 	s.add(0, 4);
-	System.out.println(s);
+	System.out.println("Before isort: " + s);
 	s.isort();
-	System.out.println(s);
+	System.out.println("After isort: " + s);
     }
 }

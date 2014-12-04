@@ -1,14 +1,14 @@
-public class Sarray {
-    private Object[] data;
+public class SuperArray {
+    private int[] data;
     private int last;
 
-    public Sarray() {
-        data = new Object[0];
+    public SuperArray() {
+        data = new int[0];
 	last = 0;
     }
 
-    public boolean add(Object i){
-	Object[] data1 = new Object[last + 1];
+    public boolean add(int i){
+	int[] data1 = new int[last + 1];
 	for (int j = 0; j < last; j++) {
 	    data1[j] = data[j];
 	}
@@ -18,8 +18,8 @@ public class Sarray {
 	return true;
     }
     
-    public void add(int index, Object i){
-	Object[] data1 = new Object[last + 1];
+    public void add(int index, int i){
+	int[] data1 = new int[last + 1];
 	for (int j = 0; j < index; j++) {
 	    data1[j] = data[j];
 	}
@@ -35,19 +35,19 @@ public class Sarray {
         return last;
     }
 
-    public Object get(int index) {
+    public int get(int index) {
         return data[index];
     }
 
-    public Object set(int index, Object i){
-        Object old = data[index];
+    public int set(int index, int i){
+        int old = data[index];
 	data[index] = i;
 	return old;
     }
 
-    public Object remove(int index){
-        Object old = data[index];
-	Object[] data1 = new Object[last-1];
+    public int remove(int index){
+        int old = data[index];
+	int[] data1 = new int[last-1];
 	int j = 0;
 	for (int i = 0; i < last; i++) {
 	    if (i != index) {
@@ -68,22 +68,40 @@ public class Sarray {
 	return Arraystring + data[data.length -1] + "}";
     }
 
+    //**********HOMEWORK 20*****************
+    public void shift(int change) {
+	int i;
+
+	int x = data[change];
+	for (i = change; i > 0 && x < data[i-1] ; i--) {
+	    data[i] = data[i-1];    
+	}
+	data[i]=x;
+    }
+
+    public void isort() {
+	try {
+	    for (int i=1; i < 10; i++){
+		if (data[i] < data[i-1]){
+		    shift(i);
+		}
+	    }
+	}
+	catch (Exception e){
+	    System.out.println("whoopsie daisy");
+	}
+    }
 
     //************DRIVER*****************
 
     public static void main(String[] args) {
-	Sarray s = new Sarray();
-	System.out.println(s.add(1337));
-	System.out.println(s.add(true));
-	System.out.println(s.add("'nastics!"));
-	System.out.println("should be (1337, true, 'nastics!): " + s);
+	SuperArray s = new SuperArray();
+	System.out.println(s.add(5));
+	System.out.println(s.add(3));
+	System.out.println(s.add(1));
 	s.add(0, 4);
-	System.out.println("should be (4, 1337, true, 'nastics!): " + s);
-	s.add(4, "rinkydink");
-	System.out.println("should be (4, 1337, true, 'nastics!, rinkydink): " + s);
-	System.out.println(s.remove(3));
-	System.out.println("Should be (4, 1337, true, rinkydink): " + s);
-	System.out.println("Should be rinkydink: " + s.get(2));
-	System.out.println("Should be 4: " + s.size());
+	System.out.println(s);
+	s.isort();
+	System.out.println(s);
     }
 }
