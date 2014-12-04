@@ -78,11 +78,21 @@ public class Sarray {
 	System.out.println(s.add("'nastics!"));
 	System.out.println("should be (1337, true, 'nastics!): " + s);
 	s.add(0, 4);
+<<<<<<< HEAD
 	System.out.println("should be (4, true, 'nastics!): " + s);
 	s.add(3, "rinkydink");
 	System.out.println("should be (4, true, 'nastics!, rinkydink): " + s);
 	System.out.println(s.remove(2));
 	System.out.println("Should be (4, true, rinkydink): " + s);
 	System.out.println("Should be rinkydink: " + s.get(2));
+=======
+	System.out.println("should be (4, 1337, true, 'nastics!): " + s);
+	s.add(4, "rinkydink");
+	System.out.println("should be (4, 1337, true, 'nastics!, rinkydink): " + s);
+	System.out.println(s.remove(3));
+	System.out.println("Should be (4, 1337, true, rinkydink): " + s);
+	System.out.println("Should be rinkydink: " + s.get(2));
+	System.out.println("Should be 4: " + s.size());
+>>>>>>> 2b2086ded44f4d75e44a1ecf8af2940fcc96dae9
     }
 }
