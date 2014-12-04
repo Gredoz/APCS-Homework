@@ -92,6 +92,29 @@ public class SuperArray {
 	}
     }
 
+
+    //***********HOMEWORK 21************
+    public void ssort(){
+	int[] data1 = new int[last + 1];
+	for (int m = 0; m < last; m++) {
+	    data1[m] = data[m];
+	}
+	for (int i=0; i < last; i++){
+	    int smallest = data[i];
+	    int smallestIndex = i;
+	    for (int j=i++; j<last; j++){
+		if (smallest > data1[j]){
+		    smallest = data1[j];
+		    smallestIndex = j;
+		}
+	    }
+	    int replace = data[i];
+	    data[i] = smallest;
+	    data[smallestIndex] = replace;
+	    }
+    }
+
+
     //************DRIVER*****************
 
     public static void main(String[] args) {
@@ -101,7 +124,7 @@ public class SuperArray {
 	System.out.println(s.add(1));
 	s.add(0, 4);
 	System.out.println("Before isort: " + s);
-	s.isort();
+	s.ssort();
 	System.out.println("After isort: " + s);
     }
 }
