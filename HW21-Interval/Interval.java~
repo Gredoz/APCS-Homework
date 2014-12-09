@@ -1,0 +1,24 @@
+import java.io.*;
+import java.util.*;
+
+public class Interval {
+    int low, high;
+    Random r = new Random;
+
+    
+    public Interval {
+	int m1 = randInt(200) -100;
+	int m2 = randint(200) -100;
+	low = min(m1, m2);
+	high = max(m1, m2); 
+    }
+
+    public String toString(){
+	return ("[" + low + " " + high + "]");
+    }
+
+    
+
+
+
+}

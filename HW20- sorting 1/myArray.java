@@ -127,11 +127,11 @@ public class myArray {
 	x.add(240);
 	x.add(80);
 	x.add(8);
-	System.out.println(x);
-	x.bsort();
-	System.out.println(x);
+	//System.out.println(x);
+	//x.bsort();
+	//System.out.println(x);
 	//for isort()
-	x.add(1);
+	/*	x.add(1);
 	x.add(192);
 	x.add(5);
 	x.add(9);
@@ -144,10 +144,18 @@ public class myArray {
 	x.add(240);
 	x.add(80);
 	x.add(8);
-	System.out.println(x);
-	x.isort();
-	System.out.println(x);
+	*/
+	
+
+
+
+	//	System.out.println(x);
+	//	x.isort();
+	//	System.out.println(x);
 	//for ssort()
+	
+
+	/*
 	x.add(1);
 	x.add(192);
 	x.add(5);
@@ -161,6 +169,9 @@ public class myArray {
 	x.add(240);
 	x.add(80);
 	x.add(8);
+	*/
+
+
 	System.out.println(x);
 	x.ssort();
 	System.out.println(x);
